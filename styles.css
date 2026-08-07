@@ -1210,11 +1210,61 @@ section {
     color: var(--primary);
 }
 
-.map-container {
+.directions-card {
+    background-color: var(--bg-tint);
+    border: 1px solid var(--border-blue);
     border-radius: var(--border-radius);
-    overflow: hidden;
-    border: 1px solid var(--border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    text-align: center;
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.directions-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    border-color: var(--primary-light);
+}
+
+.directions-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background-color: rgba(59, 130, 246, 0.08);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.directions-info h3 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    color: var(--text-title);
+    margin-bottom: 8px;
+}
+
+.directions-info p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+.directions-btn {
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 600;
+    gap: 8px;
+    background-color: var(--primary);
+    color: white;
+}
+
+.directions-btn:hover {
+    background-color: var(--primary-dark);
 }
 
 /* Iletisim Formu */
