@@ -826,8 +826,66 @@ section {
 }
 
 .practice-card:hover .btn-card-more {
-    color: var(--primary-light);
     transform: translateX(4px);
+}
+
+/* Farklı Renklerde Uzmanlık Alanları Kartları */
+.practice-card[data-area="is"] { background-color: #f0f7ff; border-color: #bfdbfe; }
+.practice-card[data-area="is"] .card-icon { background-color: rgba(37, 99, 235, 0.08); color: #2563eb; border-color: rgba(37, 99, 235, 0.15); }
+.practice-card[data-area="is"] .btn-card-more { color: #2563eb; }
+.practice-card[data-area="is"]:hover .card-icon { background-color: #2563eb; color: #ffffff; }
+.practice-card[data-area="is"]:hover .btn-card-more { color: #1d4ed8; }
+
+.practice-card[data-area="aile"] { background-color: #fff1f2; border-color: #fecdd3; }
+.practice-card[data-area="aile"] .card-icon { background-color: rgba(219, 39, 119, 0.08); color: #db2777; border-color: rgba(219, 39, 119, 0.15); }
+.practice-card[data-area="aile"] .btn-card-more { color: #db2777; }
+.practice-card[data-area="aile"]:hover .card-icon { background-color: #db2777; color: #ffffff; }
+.practice-card[data-area="aile"]:hover .btn-card-more { color: #be185d; }
+
+.practice-card[data-area="miras"] { background-color: #fffbeb; border-color: #fde68a; }
+.practice-card[data-area="miras"] .card-icon { background-color: rgba(217, 119, 6, 0.08); color: #d97706; border-color: rgba(217, 119, 6, 0.15); }
+.practice-card[data-area="miras"] .btn-card-more { color: #d97706; }
+.practice-card[data-area="miras"]:hover .card-icon { background-color: #d97706; color: #ffffff; }
+.practice-card[data-area="miras"]:hover .btn-card-more { color: #b45309; }
+
+.practice-card[data-area="idare"] { background-color: #f0fdf4; border-color: #bbf7d0; }
+.practice-card[data-area="idare"] .card-icon { background-color: rgba(22, 163, 74, 0.08); color: #16a34a; border-color: rgba(22, 163, 74, 0.15); }
+.practice-card[data-area="idare"] .btn-card-more { color: #16a34a; }
+.practice-card[data-area="idare"]:hover .card-icon { background-color: #16a34a; color: #ffffff; }
+.practice-card[data-area="idare"]:hover .btn-card-more { color: #15803d; }
+
+.practice-card[data-area="ticaret"] { background-color: #eef2ff; border-color: #c7d2fe; }
+.practice-card[data-area="ticaret"] .card-icon { background-color: rgba(79, 70, 229, 0.08); color: #4f46e5; border-color: rgba(79, 70, 229, 0.15); }
+.practice-card[data-area="ticaret"] .btn-card-more { color: #4f46e5; }
+.practice-card[data-area="ticaret"]:hover .card-icon { background-color: #4f46e5; color: #ffffff; }
+.practice-card[data-area="ticaret"]:hover .btn-card-more { color: #4338ca; }
+
+.practice-card[data-area="gayrimenkul"] { background-color: #fff7ed; border-color: #fed7aa; }
+.practice-card[data-area="gayrimenkul"] .card-icon { background-color: rgba(234, 88, 12, 0.08); color: #ea580c; border-color: rgba(234, 88, 12, 0.15); }
+.practice-card[data-area="gayrimenkul"] .btn-card-more { color: #ea580c; }
+.practice-card[data-area="gayrimenkul"]:hover .card-icon { background-color: #ea580c; color: #ffffff; }
+.practice-card[data-area="gayrimenkul"]:hover .btn-card-more { color: #c2410c; }
+
+.practice-card[data-area="devremulk"] { background-color: #faf5ff; border-color: #e9d5ff; }
+.practice-card[data-area="devremulk"] .card-icon { background-color: rgba(147, 51, 234, 0.08); color: #9333ea; border-color: rgba(147, 51, 234, 0.15); }
+.practice-card[data-area="devremulk"] .btn-card-more { color: #9333ea; }
+.practice-card[data-area="devremulk"]:hover .card-icon { background-color: #9333ea; color: #ffffff; }
+.practice-card[data-area="devremulk"]:hover .btn-card-more { color: #7c3aed; }
+
+.practice-card[data-area="yabancilar"] { background-color: #f0fdfa; border-color: #99f6e4; }
+.practice-card[data-area="yabancilar"] .card-icon { background-color: rgba(13, 148, 136, 0.08); color: #0d9488; border-color: rgba(13, 148, 136, 0.15); }
+.practice-card[data-area="yabancilar"] .btn-card-more { color: #0d9488; }
+.practice-card[data-area="yabancilar"]:hover .card-icon { background-color: #0d9488; color: #ffffff; }
+.practice-card[data-area="yabancilar"]:hover .btn-card-more { color: #0f766e; }
+
+.practice-card[data-area="sigorta"] { background-color: #ecfeff; border-color: #a5f3fc; }
+.practice-card[data-area="sigorta"] .card-icon { background-color: rgba(8, 145, 178, 0.08); color: #0891b2; border-color: rgba(8, 145, 178, 0.15); }
+.practice-card[data-area="sigorta"] .btn-card-more { color: #0891b2; }
+.practice-card[data-area="sigorta"]:hover .card-icon { background-color: #0891b2; color: #ffffff; }
+.practice-card[data-area="sigorta"]:hover .btn-card-more { color: #0e7490; }
+
+.practice-card:hover {
+    background-color: #ffffff !important;
 }
 
 /* 7. MODAL (PRACTICE DETAILS) */
