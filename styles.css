@@ -414,7 +414,7 @@ section {
     padding: 120px 0 160px;
     background-color: var(--bg-tint);
     background-image: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
-                      url('assets/hero-bg.jpg');
+                      url('assets/hero-bg.png');
     background-size: cover;
     background-position: center;
     color: var(--text-main);
