@@ -2394,46 +2394,73 @@ section {
 
 #preloader-ring {
     position: absolute;
-    inset: 0;
+    inset: -12px;
     border-radius: 50%;
-    border: 3px solid rgba(59, 130, 246, 0.08);
-    border-top-color: var(--primary);
-    border-right-color: var(--primary-light);
-    animation: ringRotate 1.4s cubic-bezier(0.5, 0.1, 0.15, 1) infinite;
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(197, 168, 128, 0.15);
+    border-top-color: #c5a880;
+    border-bottom-color: #c5a880;
+    animation: ringRotate 3.5s linear infinite;
+    box-shadow: 0 0 25px rgba(197, 168, 128, 0.04);
 }
 
 #preloader-ring::before {
     content: '';
     position: absolute;
-    inset: -8px;
+    inset: -10px;
     border-radius: 50%;
-    border: 2px solid transparent;
-    border-top-color: var(--accent);
-    border-bottom-color: rgba(2, 132, 199, 0.15);
-    animation: ringRotate 2.8s linear infinite reverse;
+    border: 1px dashed rgba(197, 168, 128, 0.2);
+    animation: ringRotate 7s linear infinite reverse;
 }
 
-.preloader-monogram {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    color: var(--primary);
-    font-family: var(--font-heading);
-    font-size: 3.5rem;
-    font-weight: 700;
+.preloader-justice-scales {
+    width: 110px;
+    height: 110px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12), 0 1px 3px rgba(30, 58, 138, 0.04);
-    border: 1px solid rgba(226, 232, 240, 0.8);
-    animation: monogramReveal 1.0s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
-               monogramGlow 2.5s ease-in-out 1.0s infinite;
-    opacity: 0;
-    transform: scale(0.5);
     z-index: 2;
-    user-select: none;
+    animation: scaleReveal 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+    transform: scale(0.6);
+}
+
+.preloader-justice-scales svg {
+    width: 100%;
+    height: 100%;
+}
+
+.scale-line {
+    fill: none;
+    stroke: #c5a880; /* Altın şampanya rengi */
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.scale-stem, .scale-base {
+    stroke: #c5a880;
+}
+
+.scale-beam {
+    stroke: #c5a880;
+    stroke-width: 3;
+}
+
+.scale-pivot {
+    fill: #f3e7c4;
+    stroke: #c5a880;
+    stroke-width: 1;
+}
+
+.scale-string {
+    stroke: rgba(197, 168, 128, 0.4);
+    stroke-width: 1.5;
+}
+
+.scale-cup {
+    fill: rgba(197, 168, 128, 0.12);
+    stroke: #c5a880;
+    stroke-width: 2.2;
 }
 
 /* Firm Name Text */
@@ -2450,10 +2477,13 @@ section {
 
 #preloader-text span:first-child {
     font-family: var(--font-heading);
-    font-size: 1.45rem;
+    font-size: 1.55rem;
     font-weight: 800;
-    color: var(--primary-dark);
-    letter-spacing: 4px;
+    background: linear-gradient(135deg, #f3e7c4 0%, #c5a880 50%, #a78b5e 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .preloader-sub {
@@ -2481,7 +2511,7 @@ section {
     height: 100%;
     width: 0%;
     border-radius: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--accent));
+    background: linear-gradient(90deg, #c5a880, #f3e7c4, #c5a880);
     background-size: 200% 100%;
     animation: barFill 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.8s,
                barShimmer 1.2s ease infinite;
@@ -2492,19 +2522,38 @@ section {
     to { transform: rotate(360deg); }
 }
 
-@keyframes monogramReveal {
+@keyframes scaleReveal {
     to { opacity: 1; transform: scale(1); }
 }
 
-@keyframes monogramGlow {
-    0%, 100% { 
-        box-shadow: 0 10px 30px rgba(30, 58, 138, 0.12), 0 0 0px transparent;
-        color: var(--primary);
-    }
-    50% { 
-        box-shadow: 0 12px 35px rgba(30, 58, 138, 0.15), 0 0 20px rgba(59, 130, 246, 0.25);
-        color: var(--primary-light);
-    }
+@keyframes beamSway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(4deg); }
+}
+
+@keyframes leftCupSway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-4deg); }
+}
+
+@keyframes rightCupSway {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(-4deg); }
+}
+
+.scale-beam-group {
+    transform-origin: 50px 35px;
+    animation: beamSway 3.2s ease-in-out infinite;
+}
+
+.scale-left-cup {
+    transform-origin: 20px 35px;
+    animation: leftCupSway 3.2s ease-in-out infinite;
+}
+
+.scale-right-cup {
+    transform-origin: 80px 35px;
+    animation: rightCupSway 3.2s ease-in-out infinite;
 }
 
 @keyframes textFadeUp {
@@ -2552,10 +2601,9 @@ section {
         height: 140px;
     }
 
-    .preloader-monogram {
-        width: 80px;
-        height: 80px;
-        font-size: 2.6rem;
+    .preloader-justice-scales {
+        width: 85px;
+        height: 85px;
     }
 
     #preloader-text span:first-child {

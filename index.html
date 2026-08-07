@@ -100,7 +100,33 @@
     <div id="preloader">
         <div id="preloader-inner">
             <div id="preloader-ring"></div>
-            <div class="preloader-monogram">B</div>
+            <div class="preloader-justice-scales">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+                    <!-- Base Pillar -->
+                    <line x1="50" y1="20" x2="50" y2="80" class="scale-line scale-stem" />
+                    <path d="M35 80h30" class="scale-line scale-base" />
+                    
+                    <!-- Swaying Beam Group -->
+                    <g class="scale-beam-group">
+                        <line x1="20" y1="35" x2="80" y2="35" class="scale-line scale-beam" />
+                        <circle cx="50" cy="35" r="3" class="scale-pivot" />
+                        
+                        <!-- Left Cup (stays vertical) -->
+                        <g class="scale-left-cup">
+                            <line x1="20" y1="35" x2="10" y2="58" class="scale-string" />
+                            <line x1="20" y1="35" x2="30" y2="58" class="scale-string" />
+                            <path d="M10 58c0 6 20 6 20 0Z" class="scale-cup" />
+                        </g>
+                        
+                        <!-- Right Cup (stays vertical) -->
+                        <g class="scale-right-cup">
+                            <line x1="80" y1="35" x2="70" y2="58" class="scale-string" />
+                            <line x1="80" y1="35" x2="90" y2="58" class="scale-string" />
+                            <path d="M70 58c0 6 20 6 20 0Z" class="scale-cup" />
+                        </g>
+                    </g>
+                </svg>
+            </div>
         </div>
         <div id="preloader-text">
             <span>BARAN HUKUK</span>
