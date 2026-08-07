@@ -638,3 +638,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 });
+
+// Sayfa Yüklendiğinde Preloader'ı Kapat (Perde Açılış Animasyonu)
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('loaded');
+            // Animasyon tamamlandığında preloader'ı tamamen gizle (0.8s transition)
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 800);
+        }, 1200); // 1.2 saniye yükleme animasyonu gösterildikten sonra perdeler açılır
+    }
+});
+
