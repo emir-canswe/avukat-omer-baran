@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emir-canswe.github.io/avukat-omer-baran/sitemap.xml
