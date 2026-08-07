@@ -607,25 +607,63 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.classList.add('loading');
         submitBtn.disabled = true;
 
-        // Sunucu gönderim simülasyonu (API yerine Timeout)
-        setTimeout(() => {
+        // FormSubmit AJAX Gönderimi
+        const emailEndpoint = 'https://formsubmit.co/ajax/av.omerbaran21@gmail.com';
+        
+        // Form verilerini topla
+        const formData = new FormData(contactForm);
+        formData.append('_subject', 'Yeni Mesaj - Av. Ömer Baran Hukuk Bürosu');
+        formData.append('_captcha', 'false'); // Captcha doğrulamasını AJAX uyumu için kapatıyoruz
+        
+        // FormData'yı JSON'a dönüştür
+        const formObject = {};
+        formData.forEach((value, key) => {
+            // KVKK checkbox'ı boolean olarak gönder veya diğerlerini düzleştir
+            if (key === 'kvkk') {
+                formObject[key] = value === 'on' ? 'Kabul Edildi' : 'Kabul Edilmedi';
+            } else {
+                formObject[key] = value;
+            }
+        });
+
+        fetch(emailEndpoint, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formObject)
+        })
+        .then(response => {
             submitBtn.classList.remove('loading');
             submitBtn.disabled = false;
             
-            // Başarılı bildirim
-            formStatus.innerText = "Mesajınız başarıyla gönderildi. Avukat Ömer Baran en kısa sürede sizinle iletişime geçecektir.";
-            formStatus.classList.add('success');
-            formStatus.style.display = 'block';
-
-            // Formu sıfırla
-            contactForm.reset();
+            if (response.ok) {
+                // Başarılı bildirim
+                formStatus.innerText = "Mesajınız başarıyla gönderildi. Avukat Ömer Baran en kısa sürede sizinle iletişime geçecektir.";
+                formStatus.classList.remove('error');
+                formStatus.classList.add('success');
+                formStatus.style.display = 'block';
+                contactForm.reset();
+            } else {
+                throw new Error('Gönderim hatası');
+            }
             
             // 8 saniye sonra bildirimi gizle
             setTimeout(() => {
                 formStatus.style.display = 'none';
             }, 8000);
+        })
+        .catch(error => {
+            submitBtn.classList.remove('loading');
+            submitBtn.disabled = false;
             
-        }, 1800);
+            // Hata bildirimi
+            formStatus.innerText = "Mesaj gönderilirken bir hata oluştu. Lütfen doğrudan e-posta veya telefon yoluyla iletişime geçin.";
+            formStatus.classList.remove('success');
+            formStatus.classList.add('error');
+            formStatus.style.display = 'block';
+        });
     });
 
     // KVKK Aydınlatma Metni linkine sahte tıklama
