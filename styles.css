@@ -614,22 +614,37 @@ section {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    gap: 16px;
+    gap: 24px;
 }
 
 .ribbon-item {
     display: flex;
     align-items: center;
-    gap: 12px;
-    color: rgba(255, 255, 255, 0.9);
-    font-size: 0.95rem;
-    font-weight: 500;
-    letter-spacing: 0.5px;
+    gap: 16px;
 }
 
 .ribbon-item svg {
     color: var(--primary-light);
     flex-shrink: 0;
+}
+
+.ribbon-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ribbon-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.ribbon-desc {
+    font-size: 0.72rem;
+    color: rgba(255, 255, 255, 0.55);
+    font-weight: 400;
+    margin-top: 1px;
 }
 
 .ribbon-divider {
@@ -2164,42 +2179,41 @@ section {
     }
     
     .ribbon-item {
-        background: rgba(255, 255, 255, 0.04);
+        background: rgba(255, 255, 255, 0.03);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.08);
         border-radius: 16px;
         padding: 16px 20px;
         display: flex;
         align-items: center;
         gap: 16px;
         color: #ffffff;
-        font-size: 0.95rem;
         transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
         width: 100%;
     }
 
     .ribbon-item:hover {
-        background: rgba(255, 255, 255, 0.08);
-        border-color: rgba(59, 130, 246, 0.4);
+        background: rgba(255, 255, 255, 0.06);
+        border-color: rgba(197, 168, 128, 0.4);
         transform: translateY(-2px);
     }
     
     .ribbon-item svg {
-        width: 36px;
-        height: 36px;
-        padding: 8px;
+        width: 40px;
+        height: 40px;
+        padding: 9px;
         border-radius: 50%;
-        background: rgba(59, 130, 246, 0.18);
-        color: var(--primary-light);
+        background: rgba(197, 168, 128, 0.12);
+        color: #c5a880; /* Şık altın rengi */
         flex-shrink: 0;
         transition: all 0.3s ease;
     }
 
     .ribbon-item:hover svg {
-        background: var(--primary-light);
-        color: #ffffff;
+        background: #c5a880;
+        color: #050b14;
         transform: rotate(360deg);
     }
     
