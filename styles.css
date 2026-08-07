@@ -55,6 +55,11 @@ body {
     overflow-x: hidden;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* YARDIMCI SINIFLAR (UTILITIES) */
 .container {
     width: 100%;
@@ -411,6 +416,7 @@ section {
 
 /* 4. HERO SECTION */
 .hero-section {
+    position: relative;
     padding: 120px 0 160px;
     background-color: var(--bg-tint);
     background-image: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
@@ -421,6 +427,7 @@ section {
     min-height: 80vh;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero-bg-overlay {
@@ -1550,20 +1557,29 @@ section {
     
     /* Hero */
     .hero-section {
-        padding: 80px 0 120px;
+        padding: 80px 0 80px;
         min-height: auto;
+        background-position: center top;
+    }
+
+    .hero-bg-overlay {
+        background: linear-gradient(180deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 100%);
     }
     
     .hero-title {
-        font-size: 2.25rem;
+        font-size: 1.75rem;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .hero-ctas {
         flex-direction: column;
+    }
+
+    .hero-content {
+        max-width: 100%;
     }
     
     /* Stats Panel */
@@ -1586,6 +1602,33 @@ section {
     /* About */
     .about-section {
         padding-top: 64px;
+    }
+
+    .about-image {
+        height: 250px;
+    }
+
+    .about-image-wrapper {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+
+    .about-image-decor {
+        display: none;
+    }
+
+    .experience-badge {
+        right: 10px;
+        bottom: -5px;
+        padding: 16px;
+    }
+
+    .exp-years {
+        font-size: 1.3rem;
+    }
+
+    .exp-text {
+        font-size: 0.7rem;
     }
     
     /* Practice */
