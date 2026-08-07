@@ -2148,18 +2148,59 @@ section {
     .hero-values-ribbon {
         position: relative;
         bottom: auto;
-        margin-top: 32px;
-        background: rgba(10, 25, 47, 0.95);
-        padding: 24px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.08);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        margin-top: 36px;
+        background: transparent;
+        padding: 0 20px;
         width: 100%;
+        border-top: none;
+        border-bottom: none;
     }
 
     .ribbon-container {
         flex-direction: column;
-        gap: 12px;
-        text-align: center;
+        gap: 14px;
+        text-align: left;
+        padding: 0;
+    }
+    
+    .ribbon-item {
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 16px;
+        padding: 16px 20px;
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        color: #ffffff;
+        font-size: 0.95rem;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+        width: 100%;
+    }
+
+    .ribbon-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(59, 130, 246, 0.4);
+        transform: translateY(-2px);
+    }
+    
+    .ribbon-item svg {
+        width: 36px;
+        height: 36px;
+        padding: 8px;
+        border-radius: 50%;
+        background: rgba(59, 130, 246, 0.18);
+        color: var(--primary-light);
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    .ribbon-item:hover svg {
+        background: var(--primary-light);
+        color: #ffffff;
+        transform: rotate(360deg);
     }
     
     .ribbon-divider {
