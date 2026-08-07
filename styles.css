@@ -300,6 +300,7 @@ section {
     letter-spacing: 0.5px;
     line-height: 1.1;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .main-header.scrolled .brand-name {
@@ -313,6 +314,7 @@ section {
     text-transform: uppercase;
     font-weight: 600;
     transition: color 0.3s ease;
+    white-space: nowrap;
 }
 
 .main-header.scrolled .brand-tagline {
@@ -335,6 +337,7 @@ section {
     padding: 6px 14px;
     border-radius: 50px;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -367,6 +370,7 @@ section {
     border: none;
     box-shadow: 0 4px 12px rgba(0, 102, 255, 0.12);
     transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .header-cta .btn:hover {
@@ -1932,49 +1936,11 @@ section {
    RESPONSIVE (MOBIL VE TABLET UYUMLULUĞU)
 ------------------------------------------------------------- */
 @media (max-width: 1024px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        gap: 48px;
-    }
-    
-    .about-image {
-        height: 380px;
-    }
-    
-    .practice-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .faq-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-    
-    .faq-left {
-        position: relative;
-        top: 0;
-    }
-    
-    .footer-top {
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    section {
-        padding: 64px 0;
-    }
-    
-    .section-title {
-        font-size: 2rem;
-    }
-    
+    /* Mobil Navbar Breakpoint at 1024px */
     .top-bar {
         display: none; /* Mobilde alan kazanmak için bilgi çubuğunu gizle */
     }
     
-    /* Mobil Navbar */
     .desktop-nav {
         display: none;
     }
@@ -2009,6 +1975,65 @@ section {
         height: 56px;
         padding: 0 16px 0 12px;
         border-radius: 50px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+    
+    .about-image {
+        height: 380px;
+    }
+    
+    .practice-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .faq-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .faq-left {
+        position: relative;
+        top: 0;
+    }
+    
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+}
+
+/* Laptop Optimization (1025px - 1200px) */
+@media (min-width: 1025px) and (max-width: 1240px) {
+    .desktop-nav ul {
+        gap: 5px;
+    }
+    .nav-link {
+        font-size: 0.82rem;
+        padding: 6px 10px;
+    }
+    .brand-name {
+        font-size: 0.95rem;
+    }
+    .brand-tagline {
+        font-size: 0.5rem;
+    }
+    .header-cta .btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 64px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
     }
     
     /* Hero */
