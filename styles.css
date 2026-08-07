@@ -794,6 +794,141 @@ section {
     color: var(--text-muted);
 }
 
+/* 5.5. AVUKATLARIMIZ SECTION */
+.lawyers-section {
+    padding: 100px 0;
+    background-color: var(--bg-sec);
+    border-bottom: 1px solid var(--border);
+}
+
+.lawyers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    margin-top: 48px;
+}
+
+.lawyer-card {
+    background: var(--bg-card);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.lawyer-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--border-blue);
+}
+
+.lawyer-card-inner {
+    display: flex;
+    padding: 32px;
+    gap: 24px;
+}
+
+.lawyer-avatar {
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lawyer-avatar-icon {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bg-tint), var(--border-blue));
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid var(--border-blue);
+    transition: var(--transition);
+}
+
+.lawyer-card:hover .lawyer-avatar-icon {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: #ffffff;
+    border-color: var(--primary-light);
+}
+
+.lawyer-title-badge {
+    position: absolute;
+    bottom: -8px;
+    background-color: var(--primary);
+    color: #ffffff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 12px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.lawyer-card:hover .lawyer-title-badge {
+    background-color: var(--primary-light);
+}
+
+.lawyer-info {
+    flex-grow: 1;
+}
+
+.lawyer-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-title);
+    margin-bottom: 6px;
+}
+
+.lawyer-speciality {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--primary-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.lawyer-bio {
+    font-size: 0.92rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.lawyer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+}
+
+.lawyer-contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    color: var(--text-main);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a.lawyer-contact-item:hover {
+    color: var(--primary-light);
+}
+
+.lawyer-contact-item svg {
+    color: var(--primary-light);
+}
+
 /* 6. ÇALIŞMA ALANLARI */
 .practice-section {
     background-color: #ffffff;
@@ -2001,6 +2136,24 @@ section {
         font-size: 0.7rem;
     }
     
+    /* Lawyers */
+    .lawyers-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-top: 32px;
+    }
+
+    .lawyer-card-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 24px;
+    }
+
+    .lawyer-contact {
+        align-items: center;
+    }
+
     /* Practice */
     .practice-grid {
         grid-template-columns: 1fr;

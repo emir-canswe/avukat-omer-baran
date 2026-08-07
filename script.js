@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Form verilerini topla
         const formData = new FormData(contactForm);
-        formData.append('_subject', 'Yeni Mesaj - Av. Ömer Baran Hukuk Bürosu');
+        formData.append('_subject', 'Yeni Mesaj - Baran Hukuk Arabuluculuk Danışmanlık Bürosu');
         formData.append('_captcha', 'false'); // Captcha doğrulamasını AJAX uyumu için kapatıyoruz
         
         // FormData'yı JSON'a dönüştür
@@ -640,7 +640,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (response.ok) {
                 // Başarılı bildirim
-                formStatus.innerText = "Mesajınız başarıyla gönderildi. Avukat Ömer Baran en kısa sürede sizinle iletişime geçecektir.";
+                formStatus.innerText = "Mesajınız başarıyla gönderildi. Avukatlarımız en kısa sürede sizinle iletişime geçecektir.";
                 formStatus.classList.remove('error');
                 formStatus.classList.add('success');
                 formStatus.style.display = 'block';
@@ -671,7 +671,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (kvkkLink) {
         kvkkLink.addEventListener('click', (e) => {
             e.preventDefault();
-            alert("KVKK AYDINLATMA METNİ:\n\nAvukat Ömer Baran Hukuk Bürosu olarak, form aracılığıyla paylaştığınız Ad Soyad, E-posta, Telefon ve uyuşmazlık detaylarınızı sadece randevu oluşturma ve size geri dönüş sağlama amaçlarıyla, 6698 sayılı Kişisel Verilerin Korunması Kanunu'na uygun olarak işlemekteyiz. Verileriniz üçüncü şahıslarla asla paylaşılmamaktadır.");
+            alert("KVKK AYDINLATMA METNİ:\n\nBaran Hukuk Arabuluculuk Danışmanlık Bürosu olarak, form aracılığıyla paylaştığınız Ad Soyad, E-posta, Telefon ve uyuşmazlık detaylarınızı sadece randevu oluşturma ve size geri dönüş sağlama amaçlarıyla, 6698 sayılı Kişisel Verilerin Korunması Kanunu'na uygun olarak işlemekteyiz. Verileriniz üçüncü şahıslarla asla paylaşılmamaktadır.");
         });
     }
 
