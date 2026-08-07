@@ -2038,15 +2038,21 @@ section {
     
     /* Hero */
     .hero-section {
-        padding: 130px 0 0; /* Header yüksekliği temizlendi ve alt padding sıfırlandı */
+        padding: 130px 0 0;
         min-height: auto;
-        background-image: none;
-        background: linear-gradient(180deg, var(--primary-dark) 0%, #1e3a8a 100%);
         flex-direction: column;
+        /* Mobilde de foto slaytı görünsün, gradient kaldırıldı */
     }
 
     .hero-bg-overlay {
-        display: none;
+        /* Mobilde koyu overlay görünsün */
+        display: block;
+        background: linear-gradient(
+            to bottom,
+            rgba(5, 15, 35, 0.75) 0%,
+            rgba(5, 15, 35, 0.88) 50%,
+            rgba(5, 15, 35, 0.95) 100%
+        );
     }
 
     .hero-container {
@@ -2061,12 +2067,14 @@ section {
         font-size: 1.65rem;
         margin-bottom: 16px;
         line-height: 1.25;
+        color: #ffffff;
     }
     
     .hero-subtitle {
         font-size: 0.9rem;
         margin-bottom: 20px;
         line-height: 1.5;
+        color: rgba(255, 255, 255, 0.9);
     }
     
     .hero-ctas {
@@ -2078,16 +2086,22 @@ section {
         font-size: 0.72rem;
         padding: 6px 12px;
         margin-bottom: 16px;
+        background-color: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
     }
 
     .hero-quote {
         font-size: 1.1rem;
         margin-bottom: 16px;
+        color: rgba(255, 255, 255, 0.95);
     }
 
+    /* Mavi alt başlık fotoğ üzerinde beyaz yapsılsın */
     .hero-subtitle-seo {
         font-size: 0.95rem;
         margin-top: 6px;
+        color: rgba(255, 255, 255, 0.85) !important;
+        display: block;
     }
     
     /* Ribbon */
