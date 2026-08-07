@@ -643,14 +643,14 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
-        // Yükleme barı animasyonu bittikten sonra (1.5s) preloader'ı kapat
+        // Yükleme barı animasyonu bittikten sonra (2.7s) preloader'ı kapat
         setTimeout(() => {
             preloader.classList.add('done');
             // Fade-out bittikten sonra DOM'dan tamamen kaldır
             setTimeout(() => {
                 preloader.style.display = 'none';
-            }, 600);
-        }, 1600);
+            }, 800);
+        }, 2700);
     }
 });
 
