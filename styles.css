@@ -495,10 +495,10 @@ section {
 /* 4. HERO SECTION */
 .hero-section {
     position: relative;
-    padding: 120px 0 160px;
+    padding: 140px 0 200px;
     background-color: #0a192f;
     color: #ffffff;
-    min-height: 80vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -2093,9 +2093,11 @@ section {
     
     /* Hero */
     .hero-section {
-        padding: 130px 0 0;
-        min-height: auto;
+        padding: 130px 0 50px;
+        min-height: 85vh;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
         /* Mobilde de foto slaytı görünsün, gradient kaldırıldı */
     }
 
