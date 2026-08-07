@@ -417,7 +417,7 @@ section {
 /* 4. HERO SECTION */
 .hero-section {
     position: relative;
-    padding: 120px 0 160px;
+    padding: 120px 0 240px;
     background-color: var(--bg-tint);
     background-image: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
                       url('assets/hero-bg.png');
