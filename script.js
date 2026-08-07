@@ -639,27 +639,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Sayfa Yüklendiğinde Preloader'ı Kapat (Perde Açılış Animasyonu - Staggered Segmented Transition)
+// Sayfa yüklendiğinde preloader'ı kapat
 window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
+        // Yükleme barı animasyonu bittikten sonra (1.5s) preloader'ı kapat
         setTimeout(() => {
-            // 1. Logoyu fade-out ile gizle
-            preloader.classList.add('loaded-logo');
-            
-            // 2. Logo tamamen gizlendikten sonra (400ms) perdeleri aç ve sitenin gelişini tetikle
+            preloader.classList.add('done');
+            // Fade-out bittikten sonra DOM'dan tamamen kaldır
             setTimeout(() => {
-                preloader.classList.add('loaded-curtains');
-                document.body.classList.remove('preloader-active');
-                document.body.classList.add('preloader-done');
-                
-                // 3. Perdeler açıldıktan sonra preloader'ı tamamen kapat (800ms)
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 800);
-            }, 400);
-            
-        }, 1200); // 1.2 saniye boyunca logo animasyonu ve yükleme barı görüntülenir
+                preloader.style.display = 'none';
+            }, 600);
+        }, 1600);
     }
 });
+
 

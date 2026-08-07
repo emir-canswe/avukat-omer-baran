@@ -1642,142 +1642,66 @@ section {
 }
 
 /* =============================================================
-   13. PERDE AÇILIŞ PRELOADER (LOFTLOADER STİLİ)
+   13. PRELOADER (SPLASH SCREEN)
 ============================================================= */
-.preloader-wrapper {
+#preloader {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    z-index: 99999;
-    pointer-events: none;
-    overflow: hidden;
-}
-
-.loader-section {
-    position: fixed;
-    top: 0;
-    width: 50%;
     height: 100%;
-    background-color: #ffffff; /* Temiz Beyaz */
-    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1);
-    z-index: 99998;
-    pointer-events: auto;
-}
-
-.loader-section.section-left {
-    left: 0;
-    border-right: 1px solid rgba(30, 58, 138, 0.05);
-}
-
-.loader-section.section-right {
-    right: 0;
-    border-left: 1px solid rgba(30, 58, 138, 0.05);
-}
-
-.loader-inner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 99999;
-    text-align: center;
-    transition: opacity 0.4s ease, visibility 0.4s ease;
-    pointer-events: auto;
-}
-
-.loader-logo-container {
+    background: #ffffff;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    z-index: 99999;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-.loader-logo-img {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    border: 3px solid var(--primary-light);
-    box-shadow: var(--shadow-md);
-    animation: preloader-logo-pulse 1.8s infinite ease-in-out;
+#preloader.done {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
-.loader-progress-bar {
-    width: 140px;
+#preloader-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    animation: splashPulse 1.6s ease-in-out infinite;
+}
+
+#preloader-bar {
+    width: 120px;
     height: 3px;
-    background-color: var(--border-blue);
+    background: var(--border-blue);
     border-radius: 3px;
     margin-top: 24px;
     overflow: hidden;
-    position: relative;
 }
 
-.loader-progress-fill {
-    width: 0%;
+#preloader-bar-fill {
     height: 100%;
-    background-color: var(--primary-light);
-    animation: preloader-fill-run 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    width: 0%;
+    background: var(--primary-light);
+    border-radius: 3px;
+    animation: barFill 1.5s ease forwards;
 }
 
-/* Yüklendiğinde Perdeleri Açma */
-.preloader-wrapper.loaded-logo .loader-inner {
-    opacity: 0;
-    visibility: hidden;
+@keyframes splashPulse {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(1.06); opacity: 1; }
 }
 
-.preloader-wrapper.loaded-curtains .loader-section.section-left {
-    transform: translateX(-100%);
-}
-
-.preloader-wrapper.loaded-curtains .loader-section.section-right {
-    transform: translateX(100%);
-}
-
-.preloader-wrapper.loaded-curtains .loader-section {
-    pointer-events: none;
-}
-
-@keyframes preloader-logo-pulse {
-    0%, 100% {
-        transform: scale(0.95);
-        opacity: 0.85;
-    }
-    50% {
-        transform: scale(1.03);
-        opacity: 1;
-        box-shadow: 0 8px 24px rgba(30, 58, 138, 0.18);
-    }
-}
-
-@keyframes preloader-fill-run {
+@keyframes barFill {
     0% { width: 0%; }
     100% { width: 100%; }
 }
 
 /* =============================================================
-   14. PAGE REVEAL & HERO SEO STYLING
+   14. HERO SEO STYLING
 ============================================================= */
-body #content,
-body #header {
-    opacity: 0;
-    transform: scale(0.995);
-    transition: opacity 1s cubic-bezier(0.4, 0, 0.2, 1), 
-                transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-body.preloader-done #content,
-body.preloader-done #header {
-    opacity: 1;
-    transform: scale(1);
-}
-
-/* Hero Section Restructuring */
-.hero-title {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
 .hero-subtitle-seo {
     display: block;
     font-size: 1.5rem;
@@ -1794,21 +1718,28 @@ body.preloader-done #header {
     font-size: 1.85rem;
     font-style: italic;
     color: var(--text-title);
-    margin-bottom: 24px;
-    border-left: 3px solid var(--primary-light);
-    padding-left: 20px;
+    margin: 0 0 24px 0;
+    padding: 0;
+    border: none;
     line-height: 1.4;
 }
 
 @media (max-width: 768px) {
+    #preloader-logo {
+        width: 90px;
+        height: 90px;
+    }
+
+    #preloader-bar {
+        width: 90px;
+    }
+
     .hero-subtitle-seo {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
     
     .hero-quote {
-        font-size: 1.35rem;
-        padding-left: 15px;
+        font-size: 1.3rem;
     }
 }
-
 
