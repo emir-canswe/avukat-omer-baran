@@ -637,6 +637,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Hero Background Slideshow (Geçiş Efekti)
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        const slideInterval = 5000; // Her 5 saniyede bir resmi değiştir
+
+        const nextSlide = () => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        };
+
+        setInterval(nextSlide, slideInterval);
+    }
+
 });
 
 // Sayfa yüklendiğinde veya zaman aşımı olduğunda preloader'ı kapat (Garantili Çalışma Yapısı)
