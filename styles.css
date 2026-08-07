@@ -820,10 +820,10 @@ section {
 
 .lawyer-card {
     background: var(--bg-card);
-    border-radius: var(--border-radius);
-    box-shadow: var(--shadow-md);
-    border: 1px solid var(--border);
-    transition: var(--transition);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.04);
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     overflow: hidden;
     position: relative;
 }
@@ -836,14 +836,14 @@ section {
 
 .lawyer-card:hover {
     transform: translateY(-8px);
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 20px 40px rgba(30, 58, 138, 0.08);
     border-color: var(--border-blue);
 }
 
 .lawyer-card-inner {
     display: flex;
-    padding: 32px;
-    gap: 28px;
+    padding: 36px;
+    gap: 32px;
 }
 
 .lawyer-avatar {
@@ -854,24 +854,29 @@ section {
     width: 120px;
 }
 
-.lawyer-avatar-icon {
+.lawyer-avatar-monogram {
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--bg-tint), var(--border-blue));
-    color: var(--primary);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid var(--border-blue);
-    transition: var(--transition);
+    border: 3px solid var(--border-blue);
     box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    letter-spacing: -1px;
 }
 
-.lawyer-card:hover .lawyer-avatar-icon {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    color: #ffffff;
-    border-color: var(--primary-light);
+.lawyer-card:hover .lawyer-avatar-monogram {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    transform: scale(1.05);
+    border-color: #ffffff;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.3);
 }
 
 .lawyer-badge-pill {
@@ -966,6 +971,34 @@ section {
     padding: 10px 16px;
     border-radius: 50px;
     height: 40px;
+}
+
+.btn-lawyer-call {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: #ffffff !important;
+    border: none;
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.12);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-lawyer-call:hover {
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
+    box-shadow: 0 6px 18px rgba(30, 58, 138, 0.22);
+    transform: translateY(-2px);
+}
+
+.btn-lawyer-whatsapp {
+    border: 1px solid var(--border-blue);
+    color: var(--primary) !important;
+    background: transparent;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-lawyer-whatsapp:hover {
+    background: rgba(59, 130, 246, 0.04);
+    border-color: var(--primary-light);
+    color: var(--primary-light) !important;
+    transform: translateY(-2px);
 }
 
 /* 6. ÇALIŞMA ALANLARI */
