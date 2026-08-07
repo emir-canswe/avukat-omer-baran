@@ -596,13 +596,13 @@ section {
 
 .stats-panel {
     background-color: #ffffff;
-    box-shadow: var(--shadow-lg);
+    box-shadow: 0 15px 45px rgba(15, 23, 42, 0.12);
     border-radius: var(--border-radius);
     padding: 32px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
 }
 
 .stat-card {
@@ -636,8 +636,8 @@ section {
 /* 5. HAKKIMIZDA SECTION */
 .about-section {
     padding-top: 140px; /* Stats panel'in taşmasını karşılamak için */
-    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #f0f7ff 0%, #e2eefc 100%);
+    border-bottom: 1px solid var(--border-blue);
 }
 
 .about-grid {
@@ -762,7 +762,7 @@ section {
 
 .practice-card {
     background-color: #f8fafc;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
     border-radius: var(--border-radius);
     padding: 36px;
     transition: var(--transition);
@@ -937,8 +937,8 @@ section {
 
 /* 8. TESTIMONIALS (MÜVEKKİL YORUMLARI) */
 .testimonials-section {
-    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
-    border-bottom: 1px solid var(--border);
+    background: linear-gradient(180deg, #f0f7ff 0%, #e2eefc 100%);
+    border-bottom: 1px solid var(--border-blue);
 }
 
 .carousel-container {
@@ -958,9 +958,9 @@ section {
     min-width: 100%;
     padding: 40px;
     background-color: #ffffff;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.05);
 }
 
 .card-rating {
@@ -1155,7 +1155,7 @@ section {
 
 /* 10. ILETISIM BÖLÜMÜ */
 .contact-section {
-    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    background: linear-gradient(180deg, #f0f7ff 0%, #e2eefc 100%);
 }
 
 .contact-grid {
@@ -1166,11 +1166,11 @@ section {
 
 .info-card {
     background-color: #ffffff;
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-blue);
     border-radius: var(--border-radius);
     padding: 32px;
     margin-bottom: 24px;
-    box-shadow: var(--shadow-sm);
+    box-shadow: 0 10px 30px rgba(30, 58, 138, 0.05);
 }
 
 .info-card-title {
