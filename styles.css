@@ -748,7 +748,9 @@ section {
 
 /* 6. ÇALIŞMA ALANLARI */
 .practice-section {
-    background-color: var(--bg-sec);
+    background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .practice-grid {
@@ -1067,7 +1069,9 @@ section {
 
 /* 9. SIKÇA SORULAN SORULAR (SSS) */
 .faq-section {
-    background-color: var(--bg-tint);
+    background: linear-gradient(180deg, #f4f7ff 0%, #ebf1ff 100%);
+    border-top: 1px solid rgba(59, 130, 246, 0.06);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.06);
 }
 
 .faq-container {
@@ -1426,9 +1430,9 @@ section {
 
 /* 11. FOOTER */
 .main-footer {
-    background-color: var(--bg-sec);
-    border-top: 1px solid var(--border);
-    color: var(--text-main);
+    background-color: #0b1329;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.65);
 }
 
 .footer-top {
@@ -1442,9 +1446,21 @@ section {
     margin-bottom: 20px;
 }
 
+.main-footer .brand-name {
+    color: #ffffff;
+}
+
+.main-footer .brand-tagline {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.main-footer .brand-logo {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 .footer-desc {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.55);
     margin-bottom: 28px;
     line-height: 1.6;
 }
@@ -1477,7 +1493,7 @@ section {
 .footer-links h3, .footer-contact h3 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
-    color: var(--text-title);
+    color: #ffffff;
     margin-bottom: 24px;
     position: relative;
     padding-bottom: 8px;
@@ -1499,11 +1515,11 @@ section {
 
 .footer-links a {
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-links a:hover {
-    color: var(--primary-light);
+    color: #ffffff;
     padding-left: 4px;
 }
 
@@ -1512,7 +1528,7 @@ section {
     gap: 12px;
     margin-bottom: 16px;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .footer-contact li svg {
@@ -1522,7 +1538,7 @@ section {
 }
 
 .footer-contact a:hover {
-    color: var(--primary);
+    color: #ffffff;
 }
 
 .footer-bottom {
