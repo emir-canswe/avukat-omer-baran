@@ -645,6 +645,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 formStatus.classList.add('success');
                 formStatus.style.display = 'block';
                 contactForm.reset();
+                // Alert uyarısı ekle
+                alert("Mesajınız başarıyla ulaştı! En kısa sürede sizinle iletişime geçeceğiz.");
             } else {
                 throw new Error('Gönderim hatası');
             }
