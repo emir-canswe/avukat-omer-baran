@@ -637,16 +637,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Hero Background Slideshow (Geçiş Efekti)
+    // Hero Background Slideshow (Yumuşak Cross-Fade Geçişi)
     const slides = document.querySelectorAll('.hero-slide');
     if (slides.length > 0) {
         let currentSlide = 0;
-        const slideInterval = 5000; // Her 5 saniyede bir resmi değiştir
+        const slideInterval = 6000; // Her 6 saniyede geçiş başlat
 
         const nextSlide = () => {
-            slides[currentSlide].classList.remove('active');
+            const prevSlide = currentSlide;
             currentSlide = (currentSlide + 1) % slides.length;
+            // Önce yeni slaytı göster (ikisi aynı anda görünür = cross-fade)
             slides[currentSlide].classList.add('active');
+            // 1.5 saniye sonra eski slaytı kaldır (yumuşak erime efekti)
+            setTimeout(() => {
+                slides[prevSlide].classList.remove('active');
+            }, 1500);
         };
 
         setInterval(nextSlide, slideInterval);
