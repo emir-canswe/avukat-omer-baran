@@ -251,6 +251,8 @@ section {
     border: 1px solid rgba(226, 232, 240, 0.8);
     box-shadow: 0 10px 30px rgba(30, 58, 138, 0.03), 0 1px 3px rgba(30, 58, 138, 0.02);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    gap: 12px;
+    overflow: hidden;
 }
 
 .main-header.scrolled {
@@ -290,6 +292,7 @@ section {
 .brand-text {
     display: flex;
     flex-direction: column;
+    min-width: 0; /* flex crush engeli */
 }
 
 .brand-name {
@@ -315,6 +318,9 @@ section {
     font-weight: 600;
     transition: color 0.3s ease;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
 }
 
 .main-header.scrolled .brand-tagline {
@@ -2020,6 +2026,7 @@ section {
     }
     .brand-tagline {
         font-size: 0.5rem;
+        max-width: 140px;
     }
     .header-cta .btn {
         padding: 6px 12px;
