@@ -639,19 +639,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
-// Sayfa yüklendiğinde preloader'ı kapat
-window.addEventListener('load', () => {
+// Sayfa yüklendiğinde veya zaman aşımı olduğunda preloader'ı kapat (Garantili Çalışma Yapısı)
+const hidePreloader = () => {
     const preloader = document.getElementById('preloader');
-    if (preloader) {
-        // Yükleme barı animasyonu bittikten sonra (2.7s) preloader'ı kapat
+    if (preloader && !preloader.classList.contains('done')) {
+        preloader.classList.add('done');
+        // Fade-out tamamlandıktan sonra DOM'da display none yap
         setTimeout(() => {
-            preloader.classList.add('done');
-            // Fade-out bittikten sonra DOM'dan tamamen kaldır
-            setTimeout(() => {
-                preloader.style.display = 'none';
-            }, 800);
-        }, 2700);
+            preloader.style.display = 'none';
+        }, 800);
     }
-});
+};
+
+// 1. Sayfa zaten tamamen yüklendiyse kapat (2.7 saniye animasyon göstererek)
+if (document.readyState === 'complete') {
+    setTimeout(hidePreloader, 2700);
+} else {
+    // 2. Yüklenme tamamlandığında kapat
+    window.addEventListener('load', () => {
+        setTimeout(hidePreloader, 2700);
+    });
+}
+
+// 3. Güvenlik Kilidi (Fallback): Yüklenme gecikirse 4.5 saniye sonra her halükarda aç!
+setTimeout(hidePreloader, 4500);
 
 
