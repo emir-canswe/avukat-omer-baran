@@ -1849,7 +1849,7 @@ section {
     
     /* Hero */
     .hero-section {
-        padding: 100px 0 40px;
+        padding: 130px 0 0; /* Header yüksekliği temizlendi ve alt padding sıfırlandı */
         min-height: auto;
         background-image: none;
         background: linear-gradient(180deg, var(--primary-dark) 0%, #1e3a8a 100%);
@@ -1869,32 +1869,50 @@ section {
     }
 
     .hero-title {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
+        margin-bottom: 16px;
+        line-height: 1.25;
     }
     
     .hero-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
     }
     
     .hero-ctas {
         flex-direction: column;
+        gap: 12px;
     }
 
     .hero-badge {
-        font-size: 0.75rem;
+        font-size: 0.72rem;
         padding: 6px 12px;
         margin-bottom: 16px;
     }
 
     .hero-quote {
-        font-size: 1.15rem;
+        font-size: 1.1rem;
+        margin-bottom: 16px;
     }
 
     .hero-subtitle-seo {
-        font-size: 1rem;
+        font-size: 0.95rem;
+        margin-top: 6px;
     }
     
     /* Ribbon */
+    .hero-values-ribbon {
+        position: relative;
+        bottom: auto;
+        margin-top: 32px;
+        background: rgba(10, 25, 47, 0.95);
+        padding: 24px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        width: 100%;
+    }
+
     .ribbon-container {
         flex-direction: column;
         gap: 12px;
@@ -2239,13 +2257,6 @@ section {
         width: 140px;
     }
 
-    .hero-subtitle-seo {
-        font-size: 1.1rem;
-    }
-    
-    .hero-quote {
-        font-size: 1.3rem;
-    }
 }
 
 
